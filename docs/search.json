@@ -1,0 +1,762 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "R + AI 科研工作流",
+    "section": "",
+    "text": "1 R + AI 科研工作流\n欢迎来到《R + AI 科研工作流》在线书籍！",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R + AI 科研工作流</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#本书简介",
+    "href": "index.html#本书简介",
+    "title": "R + AI 科研工作流",
+    "section": "1.1 本书简介",
+    "text": "1.1 本书简介\n本书旨在帮助经济学者和科研工作者掌握现代 R 语言科研工作流程，结合 AI 工具提升研究效率。\n核心工具栈： - R 语言用于统计分析 - VS Code 作为开发环境 - Claude Code 作为 AI 助手",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R + AI 科研工作流</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#适用读者",
+    "href": "index.html#适用读者",
+    "title": "R + AI 科研工作流",
+    "section": "1.2 适用读者",
+    "text": "1.2 适用读者\n\n经济学、金融学、管理学等社科领域的研究者\n需要进行实证分析的研究生和博士生\n希望提升科研效率的学者",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R + AI 科研工作流</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#本书结构",
+    "href": "index.html#本书结构",
+    "title": "R + AI 科研工作流",
+    "section": "1.3 本书结构",
+    "text": "1.3 本书结构\n\n\n\n章节\n内容\n\n\n\n\n第1章\nR 环境与 VS Code 配置\n\n\n第2章\n数据读写与基本操作\n\n\n第3章\n论文复现：交错双重差分\n\n\n第4章\nClaude Code 辅助科研\n\n\n第5章\n总结与实践",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R + AI 科研工作流</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#在线资源",
+    "href": "index.html#在线资源",
+    "title": "R + AI 科研工作流",
+    "section": "1.4 在线资源",
+    "text": "1.4 在线资源\n\n本书源代码：GitHub\n数据与代码附件：在线仓库\n\n让我们开始学习吧！",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>R + AI 科研工作流</span>"
+    ]
+  },
+  {
+    "objectID": "01-setup.html",
+    "href": "01-setup.html",
+    "title": "2  R 环境与 VS Code 配置",
+    "section": "",
+    "text": "2.1 R 与 RStudio 安装\n本章介绍如何搭建 R 语言科研工作环境，包括 R、RStudio 和 VS Code 的配置。",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R 环境与 VS Code 配置</span>"
+    ]
+  },
+  {
+    "objectID": "01-setup.html#r-与-rstudio-安装",
+    "href": "01-setup.html#r-与-rstudio-安装",
+    "title": "2  R 环境与 VS Code 配置",
+    "section": "",
+    "text": "2.1.1 安装 R\n从 CRAN 官网 下载适合你操作系统的 R 版本：\n\nWindows: 点击 “Download R for Windows”\nmacOS: 点击 “Download R for macOS”\nLinux: 选择对应的发行版\n\n\n\n2.1.2 安装 RStudio\nRStudio 是最流行的 R IDE，推荐安装 RStudio Desktop：\n\n访问 RStudio 官网\n下载 RStudio Desktop (Free版)\n按默认设置安装\n\n\n\n2.1.3 验证安装\n安装完成后，打开 RStudio，在控制台输入：\n\nR.version.string\n\n如果显示版本号，说明安装成功。",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R 环境与 VS Code 配置</span>"
+    ]
+  },
+  {
+    "objectID": "01-setup.html#vs-code-r-扩展配置",
+    "href": "01-setup.html#vs-code-r-扩展配置",
+    "title": "2  R 环境与 VS Code 配置",
+    "section": "2.2 VS Code R 扩展配置",
+    "text": "2.2 VS Code R 扩展配置\n\n2.2.1 安装 VS Code\n从 VS Code 官网 下载并安装。\n\n\n2.2.2 安装 R 扩展\n在 VS Code 中安装以下扩展：\n\nR Extension Pack (包含核心扩展)\n\nR (by REditorSupport)\nR Debugger\nR LSP Client\n\nQuarto (用于本书的 .qmd 文档)\nPython (可选，用于混合编程)\n\n\n\n2.2.3 配置 R 终端\n打开 VS Code 设置 (Ctrl+,)，搜索 “Rterm”，配置 R 路径：\n\nWindows:\n{\n  \"r.rterm.windows\": \"C:/Program Files/R/R-4.x.x/bin/R.exe\",\n  \"r.rterm.option\": [\"--no-save\", \"--no-restore\"]\n}\nmacOS:\n{\n  \"r.rterm.mac\": \"/usr/local/bin/R\"\n}\n\n\n\n2.2.4 终端集成测试\n创建一个新的 R 脚本文件 test.R，输入：\n\n# 测试代码\nprint(\"Hello, R!\")\nx &lt;- 1:10\nmean(x)\n\n选中代码，按 Ctrl+Enter 运行，观察终端输出。",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R 环境与 VS Code 配置</span>"
+    ]
+  },
+  {
+    "objectID": "01-setup.html#包管理基础",
+    "href": "01-setup.html#包管理基础",
+    "title": "2  R 环境与 VS Code 配置",
+    "section": "2.3 包管理基础",
+    "text": "2.3 包管理基础\n\n2.3.1 安装包\n使用 install.packages() 安装 CRAN 上的包：\n\n# 安装单个包\n# install.packages(\"tidyverse\")\n\n# 安装多个包\n# install.packages(c(\"haven\", \"panelView\", \"did\"))\n\n\n提示：国内用户可以配置镜像源加速下载：\n\n# 配置清华镜像\noptions(repos = c(CRAN = \"https://mirrors.tuna.tsinghua.edu.cn/CRAN/\"))\n\n\n\n\n2.3.2 加载包\n使用 library() 加载已安装的包：\n\n# 加载 tidyverse 包\nlibrary(tidyverse)\n\n\n\n2.3.3 查看已安装的包\n\n# 查看已安装的包列表\n# installed.packages()[, c(\"Package\", \"Version\")]\n\n# 检查特定包是否安装\n# requireNamespace(\"tidyverse\", quietly = TRUE)\n\n\n\n2.3.4 更新包\n\n# 更新所有包\n# update.packages(ask = FALSE)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R 环境与 VS Code 配置</span>"
+    ]
+  },
+  {
+    "objectID": "01-setup.html#常用科研包推荐",
+    "href": "01-setup.html#常用科研包推荐",
+    "title": "2  R 环境与 VS Code 配置",
+    "section": "2.4 常用科研包推荐",
+    "text": "2.4 常用科研包推荐\n\n# 数据处理\n# install.packages(\"tidyverse\")    # 数据科学核心包\n# install.packages(\"data.table\")   # 高性能数据处理\n\n# 数据导入\n# install.packages(\"haven\")        # Stata, SAS, SPSS 文件\n# install.packages(\"readxl\")       # Excel 文件\n# install.packages(\"writexl\")      # 写入 Excel\n\n# 计量经济学\n# install.packages(\"fixest\")       # 固定效应模型\n# install.packages(\"did\")          # 双重差分\n# install.packages(\"synthdid\")     # 合成DID\n\n# 可视化\n# install.packages(\"ggplot2\")      # 核心绘图包\n# install.packages(\"panelView\")    # 面板数据可视化\n\n# 表格输出\n# install.packages(\"modelsummary\") # 回归表格\n# install.packages(\"gt\")           # 精美表格",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R 环境与 VS Code 配置</span>"
+    ]
+  },
+  {
+    "objectID": "01-setup.html#实践练习",
+    "href": "01-setup.html#实践练习",
+    "title": "2  R 环境与 VS Code 配置",
+    "section": "2.5 实践练习",
+    "text": "2.5 实践练习\n\n安装 R 和 RStudio\n安装 VS Code 及 R 扩展\n配置好 R 终端并测试运行简单代码\n安装 tidyverse 系列包\n\n下一章我们将学习数据的读写与基本操作。",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R 环境与 VS Code 配置</span>"
+    ]
+  },
+  {
+    "objectID": "02-data.html",
+    "href": "02-data.html",
+    "title": "3  数据读写与基本操作",
+    "section": "",
+    "text": "3.1 多格式数据导入导出\n本章介绍 R 语言中的数据导入导出、数据探索和基础可视化。",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>数据读写与基本操作</span>"
+    ]
+  },
+  {
+    "objectID": "02-data.html#多格式数据导入导出",
+    "href": "02-data.html#多格式数据导入导出",
+    "title": "3  数据读写与基本操作",
+    "section": "",
+    "text": "3.1.1 读取 Stata .dta 文件\n使用 haven 包读取 Stata 文件：\n\n# 加载包\nlibrary(haven)\nlibrary(tibble)\nlibrary(dplyr)\n\n# 设置工作路径\nsetwd(\"F:/2026学术直播/2026年5月学术直播资料讲义/16--R 工作流\")\n\n# 读取 .dta 文件\nsimulation &lt;- read_dta(\"simulation.dta\")\n\n# 查看数据结构\nglimpse(simulation)\n\n\n\n3.1.2 读取 Excel 文件\n使用 readxl 包：\n\nlibrary(readxl)\n\n# 读取 Excel 文件\n# excel_data &lt;- read_excel(\"data.xlsx\", sheet = \"Sheet1\")\n\n# 查看工作表名称\n# excel_sheets(\"data.xlsx\")\n\n\n\n3.1.3 读取 CSV 文件\n基础 R 或 readr：\n\n# 基础 R\n# csv_data &lt;- read.csv(\"data.csv\")\n\n# readr (更快)\nlibrary(readr)\n# csv_data &lt;- read_csv(\"data.csv\")\n\n\n\n3.1.4 写入数据\n\nlibrary(writexl)\n\n# 写入 Stata\n# write_dta(simulation, \"output.dta\")\n\n# 写入 Excel\n# write_xlsx(simulation, \"output.xlsx\")\n\n# 写入 CSV\n# write_csv(simulation, \"output.csv\")",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>数据读写与基本操作</span>"
+    ]
+  },
+  {
+    "objectID": "02-data.html#数据探索",
+    "href": "02-data.html#数据探索",
+    "title": "3  数据读写与基本操作",
+    "section": "3.2 数据探索",
+    "text": "3.2 数据探索\n\n3.2.1 查看数据\n\n# 前几行\nhead(simulation)\n\n# 后几行\ntail(simulation)\n\n# 数据结构\nstr(simulation)\n\n# 统计摘要\nsummary(simulation)\n\n\n\n3.2.2 使用 dplyr 进行数据操作\n\nlibrary(dplyr)\n\n# 筛选观测\nsimulation %&gt;%\n  filter(t &gt;= 2015)\n\n# 选择变量\nsimulation %&gt;%\n  select(i, t, Y, D)\n\n# 生成新变量\nsimulation &lt;- simulation %&gt;%\n  mutate(post = as.integer(t &gt;= 2015))\n\n# 分组统计\nsimulation %&gt;%\n  group_by(t) %&gt;%\n  summarize(\n    mean_Y = mean(Y),\n    n = n()\n  )",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>数据读写与基本操作</span>"
+    ]
+  },
+  {
+    "objectID": "02-data.html#基础可视化",
+    "href": "02-data.html#基础可视化",
+    "title": "3  数据读写与基本操作",
+    "section": "3.3 基础可视化",
+    "text": "3.3 基础可视化\n\n3.3.1 基础绘图函数\n\n# 散点图\nplot(simulation$t, simulation$Y,\n     xlab = \"年份\", ylab = \"结果变量\",\n     main = \"Y 的时间趋势\")\n\n# 直方图\nhist(simulation$Y,\n     xlab = \"Y\", main = \"Y 的分布\",\n     col = \"lightblue\", border = \"white\")\n\n\n\n3.3.2 使用 ggplot2\n\nlibrary(ggplot2)\nlibrary(dplyr)\n\n# 直方图\nggplot(simulation, aes(x = Y)) +\n  geom_histogram(fill = \"steelblue\", color = \"white\", bins = 30) +\n  labs(title = \"Y 的分布\", x = \"Y\", y = \"频数\") +\n  theme_minimal()\n\n# 时间趋势图\nsimulation %&gt;%\n  group_by(t, D) %&gt;%\n  summarize(mean_Y = mean(Y), .groups = \"drop\") %&gt;%\n  ggplot(aes(x = t, y = mean_Y, color = factor(D), group = D)) +\n  geom_line(linewidth = 1) +\n  geom_point(size = 2) +\n  labs(title = \"处理组与对照组趋势\",\n       x = \"年份\", y = \"平均 Y\", color = \"处理状态\") +\n  scale_color_manual(labels = c(\"对照组\", \"处理组\"),\n                     values = c(\"#440154\", \"#21908C\")) +\n  theme_minimal()\n\n\n\n3.3.3 面板数据可视化\n使用 panelView 包：\n\nlibrary(panelView)\n\n# 面板数据状态图\npanelview(Y ~ D, data = simulation,\n          index = c(\"i\", \"t\"),\n          xlab = \"时间\", ylab = \"个体\",\n          main = \"处理状态分布\",\n          by.timing = FALSE,\n          legend.labs = c(\"未处理\", \"已处理\"),\n          gridOff = TRUE)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>数据读写与基本操作</span>"
+    ]
+  },
+  {
+    "objectID": "02-data.html#实践练习",
+    "href": "02-data.html#实践练习",
+    "title": "3  数据读写与基本操作",
+    "section": "3.4 实践练习",
+    "text": "3.4 实践练习\n\n找到一个 Stata 格式的实证数据，读取到 R 中\n进行数据探索：使用 head(), summary(), str()\n创建一个直方图和一个散点图\n将数据导出为 Excel 格式\n\n下一章我们将进行论文复现，学习交错双重差分方法。",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>数据读写与基本操作</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication.html",
+    "href": "03-replication.html",
+    "title": "4  论文复现：交错双重差分",
+    "section": "",
+    "text": "4.1 研究背景\n本章基于《数量经济技术经济研究》与《管理世界》的论文复现，介绍交错双重差分（Staggered DID）方法及其应用。\n交错双重差分适用于处理时点存在异质性的政策评估场景。我们将使用 did 包进行估计。",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>论文复现：交错双重差分</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication.html#数据准备",
+    "href": "03-replication.html#数据准备",
+    "title": "4  论文复现：交错双重差分",
+    "section": "4.2 数据准备",
+    "text": "4.2 数据准备\n首先加载必要的包：\n\n# 加载包\nlibrary(haven)\nlibrary(did)\nlibrary(panelView)\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(tibble)\n\n\n4.2.1 读取数据\n读取 Stata 格式的模拟数据集：\n\n# 设置工作路径\nsetwd(\"F:/2026学术直播/2026年5月学术直播资料讲义/16--R 工作流\")\n\n# 读取数据\nsimulation &lt;- read_dta(\"simulation.dta\")\n\n# 查看数据结构\nstr(simulation)\n\n# 查看前几行数据\nhead(simulation)\n\n# 统计摘要\nsummary(simulation)\n\n\n\n4.2.2 数据说明\n数据集 simulation 包含以下变量：\n\ni: 个体标识符\nt: 时间\ngvar: 处理组开始时间（0表示未处理）\nD: 处理状态哑变量\nY: 结果变量",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>论文复现：交错双重差分</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication.html#面板数据可视化",
+    "href": "03-replication.html#面板数据可视化",
+    "title": "4  论文复现：交错双重差分",
+    "section": "4.3 面板数据可视化",
+    "text": "4.3 面板数据可视化\n使用 panelView 查看处理状态分布：\n\n# 图 D.2：处理状态分布\npanelview(Y ~ D, data = simulation,\n          index = c(\"i\", \"t\"),\n          xlab = \"时间\", ylab = \"个体\",\n          main = \"处理状态分布\",\n          by.timing = FALSE,\n          legend.labs = c(\"未处理\", \"已处理\"),\n          gridOff = TRUE)\n\n按处理时间分组查看：\n\npanelview(Y ~ D, data = simulation,\n          index = c(\"i\", \"t\"),\n          xlab = \"时间\", ylab = \"处理组\",\n          main = \"按处理时间分组的处理状态\",\n          by.timing = TRUE,\n          legend.labs = c(\"未处理\", \"已处理\"),\n          gridOff = TRUE)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>论文复现：交错双重差分</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication.html#使用-did-包估计",
+    "href": "03-replication.html#使用-did-包估计",
+    "title": "4  论文复现：交错双重差分",
+    "section": "4.4 使用 did 包估计",
+    "text": "4.4 使用 did 包估计\n\n4.4.1 基础估计\n使用 att_gt() 函数估计群组时期平均处理效应（ATT(g,t)）：\n\n# 图 D.4：估计 ATT(g,t)\nmw.attgt &lt;- att_gt(\n  yname = \"Y\",\n  gname = \"gvar\",\n  idname = \"i\",\n  tname = \"t\",\n  xformla = ~1,                    # 不包含协变量\n  data = simulation,\n  est_method = \"dr\",               # 双重稳健估计\n  bstrap = TRUE,                   # 自助法标准误\n  cband = TRUE                     # 同时置信带\n)\n\n# 查看结果\nsummary(mw.attgt)\n\n\n\n4.4.2 估计方法选择\ndid 包支持多种估计方法：\n\n# 回归法 (OR)\nmw.attgt_or &lt;- att_gt(\n  yname = \"Y\", gname = \"gvar\", idname = \"i\", tname = \"t\",\n  xformla = ~1, data = simulation, est_method = \"reg\"\n)\nsummary(mw.attgt_or)\n\n# 逆概率加权法 (IPW)\nmw.attgt_ipw &lt;- att_gt(\n  yname = \"Y\", gname = \"gvar\", idname = \"i\", tname = \"t\",\n  xformla = ~1, data = simulation, est_method = \"ipw\"\n)\nsummary(mw.attgt_ipw)\n\n\n\n4.4.3 结果可视化\n使用 ggdid() 绘制结果：\n\n# 绘制 ATT(g,t) 结果\nggdid(mw.attgt, ylim = c(-3, 5)) +\n  theme_minimal() +\n  labs(title = \"群组时期平均处理效应 ATT(g,t)\")",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>论文复现：交错双重差分</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication.html#事件研究设计",
+    "href": "03-replication.html#事件研究设计",
+    "title": "4  论文复现：交错双重差分",
+    "section": "4.5 事件研究设计",
+    "text": "4.5 事件研究设计\n\n4.5.1 计算事件研究估计量\n\n# 事件研究估计\nmw.es &lt;- aggte(mw.attgt, type = \"dynamic\")\n\nsummary(mw.es)\n\n\n\n4.5.2 绘制事件研究图\n\n# 事件研究图\nggdid(mw.es) +\n  geom_vline(xintercept = 0, linetype = \"dashed\", color = \"red\") +\n  labs(title = \"事件研究：动态处理效应\",\n       x = \"相对时间（相对于处理时点）\",\n       y = \"ATT\") +\n  theme_minimal()",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>论文复现：交错双重差分</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication.html#平均处理效应汇总",
+    "href": "03-replication.html#平均处理效应汇总",
+    "title": "4  论文复现：交错双重差分",
+    "section": "4.6 平均处理效应汇总",
+    "text": "4.6 平均处理效应汇总\n\n4.6.1 总体 ATT\n\n# 总体 ATT\nmw.att &lt;- aggte(mw.attgt, type = \"group\")\nsummary(mw.att)\n\n\n\n4.6.2 分组 ATT\n\n# 按处理组分组的 ATT\ngroup_att &lt;- mw.att$att.egt %&gt;%\n  as_tibble() %&gt;%\n  mutate(g = mw.att$egt) %&gt;%\n  select(g, att, se)\n\nprint(group_att)\n\n# 可视化分组 ATT\nggplot(group_att, aes(x = factor(g), y = att)) +\n  geom_bar(stat = \"identity\", fill = \"steelblue\", alpha = 0.7) +\n  geom_errorbar(aes(ymin = att - 1.96 * se,\n                    ymax = att + 1.96 * se),\n                width = 0.2) +\n  labs(title = \"各处理组的 ATT\",\n       x = \"处理时间\", y = \"ATT\") +\n  theme_minimal()",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>论文复现：交错双重差分</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication.html#完整代码示例",
+    "href": "03-replication.html#完整代码示例",
+    "title": "4  论文复现：交错双重差分",
+    "section": "4.7 完整代码示例",
+    "text": "4.7 完整代码示例\n以下是完整的分析代码（与附件中的 R 代码对应）：\n\n########################################################################\n## figure D.2 & figure D.4\n########################################################################\nlibrary(panelView)\nlibrary(haven)\n\n# 设置工作路径\nsetwd(\"F:/2026学术直播/2026年5月学术直播资料讲义/16--R 工作流\")\n\n# 读取数据\nsimulation &lt;- read_dta(\"simulation.dta\")\n\n## figure D.2\npanelview(Y ~ D, data = simulation,\n          index = c(\"i\", \"t\"),\n          xlab = \"时间\", ylab = \"个体\",\n          main = \"处理状态分布\",\n          by.timing = FALSE,\n          legend.labs = c(\"未处理\", \"已处理\"),\n          gridOff = TRUE)\n\n## figure D.4\nlibrary(did)\nmw.attgt &lt;- att_gt(\n  yname = \"Y\",\n  gname = \"gvar\",\n  idname = \"i\",\n  tname = \"t\",\n  xformla = ~1,\n  data = simulation\n)\n\n# 总结结果\nsummary(mw.attgt)\n\n# 绘制结果\nggdid(mw.attgt, ylim = c(-3, 5))",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>论文复现：交错双重差分</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication.html#实践练习",
+    "href": "03-replication.html#实践练习",
+    "title": "4  论文复现：交错双重差分",
+    "section": "4.8 实践练习",
+    "text": "4.8 实践练习\n\n运行本章的代码，理解交错 DID 的估计过程\n尝试不同的估计方法（dr、ipw、reg），比较结果\n使用自己的数据重复分析\n绘制事件研究图并解释结果\n\n下一章我们将学习如何使用 Claude Code 辅助科研工作。",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>论文复现：交错双重差分</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication-02.html",
+    "href": "03-replication-02.html",
+    "title": "5  论文复现：交错双重差分（基于原始 R 代码）",
+    "section": "",
+    "text": "5.1 前置准备\n本章直接基于原始代码 figure D2&D4.R 进行论文复现。",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>论文复现：交错双重差分（基于原始 R 代码）</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication-02.html#前置准备",
+    "href": "03-replication-02.html#前置准备",
+    "title": "5  论文复现：交错双重差分（基于原始 R 代码）",
+    "section": "",
+    "text": "5.1.1 数据准备\n在运行本章代码前，需要先在 Stata 中运行 generate_simulation.do 来生成 simulation.dta 文件。\n或者直接使用原始附件中提供的 simulation.dta（如果有）。\n将 simulation.dta 放在与本章代码相同的目录下。\n\n\n5.1.2 加载所需的 R 包\n\nlibrary(panelView)\nlibrary(haven)\nlibrary(did)",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>论文复现：交错双重差分（基于原始 R 代码）</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication-02.html#读取数据",
+    "href": "03-replication-02.html#读取数据",
+    "title": "5  论文复现：交错双重差分（基于原始 R 代码）",
+    "section": "5.2 读取数据",
+    "text": "5.2 读取数据\n与原始代码一致：\n\n# 读取 Stata 格式的数据\nsimulation &lt;- read_dta(\"simulation.dta\")\n\n# 查看数据结构\nstr(simulation)\n\n# 查看前几行数据\nhead(simulation)\n\n# 统计摘要\nsummary(simulation)",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>论文复现：交错双重差分（基于原始 R 代码）</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication-02.html#figure-d.2-处理状态面板视图",
+    "href": "03-replication-02.html#figure-d.2-处理状态面板视图",
+    "title": "5  论文复现：交错双重差分（基于原始 R 代码）",
+    "section": "5.3 Figure D.2: 处理状态面板视图",
+    "text": "5.3 Figure D.2: 处理状态面板视图\n使用 panelView 包来可视化处理状态分布：\n\n## figure D.2\npanelview(Y ~ D, data = simulation,\n          index = c(\"i\", \"t\"),\n          xlab = \"时间\", ylab = \"个体\",\n          main = \"Figure D.2: 处理状态分布\",\n          by.timing = FALSE,\n          legend.labs = c(\"未处理\", \"已处理\"))\n\n如果需要按处理时间分组查看：\n\npanelview(Y ~ D, data = simulation,\n          index = c(\"i\", \"t\"),\n          xlab = \"时间\", ylab = \"处理组\",\n          main = \"Figure D.2 (按处理时间分组)\",\n          by.timing = TRUE,\n          legend.labs = c(\"未处理\", \"已处理\"))",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>论文复现：交错双重差分（基于原始 R 代码）</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication-02.html#figure-d.4-使用-did-包估计-attgt",
+    "href": "03-replication-02.html#figure-d.4-使用-did-包估计-attgt",
+    "title": "5  论文复现：交错双重差分（基于原始 R 代码）",
+    "section": "5.4 Figure D.4: 使用 did 包估计 ATT(g,t)",
+    "text": "5.4 Figure D.4: 使用 did 包估计 ATT(g,t)\n\n5.4.1 估计群组时期平均处理效应\n与原始代码一致：\n\n## figure D.4\nmw.attgt &lt;- att_gt(\n  yname = \"Y\",\n  gname = \"gvar\",\n  idname = \"i\",\n  tname = \"t\",\n  xformla = ~ 1,\n  data = simulation\n  # 可选参数: est_method = \"dr\"/\"ipw\"/\"reg\"\n)\n\n# summarize the results\nsummary(mw.attgt)\n\n\n\n5.4.2 尝试不同估计方法\n原始代码注释中提到了可选估计方法，让我们一一尝试：\n\n# 双重稳健估计 (dr)\nmw.attgt_dr &lt;- att_gt(\n  yname = \"Y\",\n  gname = \"gvar\",\n  idname = \"i\",\n  tname = \"t\",\n  xformla = ~ 1,\n  data = simulation,\n  est_method = \"dr\"\n)\nsummary(mw.attgt_dr)\n\n\n# 逆概率加权估计 (ipw)\nmw.attgt_ipw &lt;- att_gt(\n  yname = \"Y\",\n  gname = \"gvar\",\n  idname = \"i\",\n  tname = \"t\",\n  xformla = ~ 1,\n  data = simulation,\n  est_method = \"ipw\"\n)\nsummary(mw.attgt_ipw)\n\n\n# 回归估计 (reg)\nmw.attgt_reg &lt;- att_gt(\n  yname = \"Y\",\n  gname = \"gvar\",\n  idname = \"i\",\n  tname = \"t\",\n  xformla = ~ 1,\n  data = simulation,\n  est_method = \"reg\"\n)\nsummary(mw.attgt_reg)\n\n\n\n5.4.3 绘制 ATT(g,t) 结果\n与原始代码一致：\n\n# plot the results\n# set ylim so that all plots have the same scale along y-axis\nggdid(mw.attgt, ylim = c(-3, 5))\n\n使用 ggplot2 美化图表：\n\nlibrary(ggplot2)\n\nggdid(mw.attgt, ylim = c(-3, 5)) +\n  ggtitle(\"Figure D.4: 群组时期平均处理效应 ATT(g,t)\") +\n  xlab(\"群组\") +\n  ylab(\"ATT\") +\n  theme_minimal()",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>论文复现：交错双重差分（基于原始 R 代码）</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication-02.html#事件研究设计",
+    "href": "03-replication-02.html#事件研究设计",
+    "title": "5  论文复现：交错双重差分（基于原始 R 代码）",
+    "section": "5.5 事件研究设计",
+    "text": "5.5 事件研究设计\n基于 ATT(g,t) 进一步估计动态处理效应：\n\n# 事件研究估计\nmw.es &lt;- aggte(mw.attgt, type = \"dynamic\")\n\nsummary(mw.es)\n\n# 事件研究图\nggdid(mw.es) +\n  ggtitle(\"事件研究: 动态处理效应\") +\n  xlab(\"相对时间\") +\n  ylab(\"ATT\") +\n  theme_minimal()",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>论文复现：交错双重差分（基于原始 R 代码）</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication-02.html#总体-att",
+    "href": "03-replication-02.html#总体-att",
+    "title": "5  论文复现：交错双重差分（基于原始 R 代码）",
+    "section": "5.6 总体 ATT",
+    "text": "5.6 总体 ATT\n\n# 总体 ATT\nmw.att &lt;- aggte(mw.attgt, type = \"group\")\nsummary(mw.att)",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>论文复现：交错双重差分（基于原始 R 代码）</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication-02.html#完整复现代码",
+    "href": "03-replication-02.html#完整复现代码",
+    "title": "5  论文复现：交错双重差分（基于原始 R 代码）",
+    "section": "5.7 完整复现代码",
+    "text": "5.7 完整复现代码\n以下是与原始 figure D2&D4.R 完全一致的完整代码：\n\n########################################################################\n## figure D.2 & figure D.4 (完整复现版)\n########################################################################\n\nlibrary(panelView)\nlibrary(haven)\n\n# 读取数据\nsimulation &lt;- read_dta(\"simulation.dta\")\n\n## figure D.2\npanelview(Y ~ D, data = simulation,\n          index = c(\"i\", \"t\"),\n          xlab = \"时间\", ylab = \"个体\",\n          main = \"Figure D.2: 处理状态分布\",\n          by.timing = FALSE,\n          legend.labs = c(\"未处理\", \"已处理\"))\n\n## figure D.4\nlibrary(did)\nmw.attgt &lt;- att_gt(\n  yname = \"Y\",\n  gname = \"gvar\",\n  idname = \"i\",\n  tname = \"t\",\n  xformla = ~ 1,\n  data = simulation\n)\n\n# summarize the results\nsummary(mw.attgt)\n\n# plot the results\n# set ylim so that all plots have the same scale along y-axis\nggdid(mw.attgt, ylim = c(-3, 5))",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>论文复现：交错双重差分（基于原始 R 代码）</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication-02.html#数据变量说明",
+    "href": "03-replication-02.html#数据变量说明",
+    "title": "5  论文复现：交错双重差分（基于原始 R 代码）",
+    "section": "5.8 数据变量说明",
+    "text": "5.8 数据变量说明\n根据生成数据的代码，变量说明如下：\n\n\n\n变量\n说明\n\n\n\n\ni\n个体ID (1-500)\n\n\nt\n时间期数 (1-8)\n\n\nEi\n个体首次接受处理的时间 (2-8)，NA表示永不处理\n\n\nK\n相对处理时间：t - Ei\n\n\nD\n处理状态指示变量 (0/1)\n\n\ngvar\ndid 包需要的分组变量 (Ei或0)\n\n\ntau\n真实处理效应\n\n\neps\n随机误差项\n\n\nY\n结果变量",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>论文复现：交错双重差分（基于原始 R 代码）</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication-02.html#实践练习",
+    "href": "03-replication-02.html#实践练习",
+    "title": "5  论文复现：交错双重差分（基于原始 R 代码）",
+    "section": "5.9 实践练习",
+    "text": "5.9 实践练习\n\n在 Stata 中运行 generate_simulation.do 生成 simulation.dta\n在 R 中运行本章代码，复现 Figure D.2 和 Figure D.4\n尝试使用不同的估计方法 (dr, ipw, reg) 并比较结果\n绘制事件研究图并解释结果\n计算总体 ATT 并解释其含义",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>论文复现：交错双重差分（基于原始 R 代码）</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication-03-Code.html",
+    "href": "03-replication-03-Code.html",
+    "title": "6  论文复现：交错双重差分（基于原始 R 代码）",
+    "section": "",
+    "text": "6.1 原始代码\n本章直接基于原始代码 figure D2&D4.R 进行论文复现。\n########################################################################\n## figure D.2 & figure D.4\n########################################################################\nlibrary(panelView)\nlibrary(haven)\nsetwd(\"F:/2026学术直播/2026年5月学术直播资料讲义/16--R 工作流\")\nsimulation &lt;- read_dta(\"simulation.dta\")\n## figure D.2\npanelview(Y ~ D, data = simulation, index = c(\"i\", \"t\"), xlab = \"时间\", ylab = \"\",\n          main = \"处理状态\", by.timing = FALSE, legend.labs =c(\"未处理\",\"已处理\"),\n          gridOff = TRUE)\n\n## figure D.4\nlibrary(did)\nmw.attgt &lt;- att_gt(yname = \"Y\",\n                   gname = \"gvar\",\n                   idname = \"i\",\n                   tname = \"t\",\n                   xformla = ~1,\n                   data = simulation,\n) ##parameter:est_method = \"dr\"/\"ipw\"/\"reg\"(\"or\" in paper)\n\n# summarize the results\nsummary(mw.attgt)\n\n# plot the results\n# set ylim so that all plots have the same scale along y-axis\nggdid(mw.attgt, ylim = c(-3,5))",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>论文复现：交错双重差分（基于原始 R 代码）</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication-03-Code.html#前置准备",
+    "href": "03-replication-03-Code.html#前置准备",
+    "title": "6  论文复现：交错双重差分（基于原始 R 代码）",
+    "section": "6.2 前置准备",
+    "text": "6.2 前置准备\n\n6.2.1 数据准备\n在运行本章代码前，需要先在 Stata 中运行 generate_simulation.do 来生成 simulation.dta 文件。\n或者直接使用原始附件中提供的 simulation.dta（如果有）。\n将 simulation.dta 放在与本章代码相同的目录下。\n\n\n6.2.2 加载所需的 R 包\n\nlibrary(panelView)\nlibrary(haven)\nlibrary(did)\nlibrary(ggplot2)",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>论文复现：交错双重差分（基于原始 R 代码）</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication-03-Code.html#读取数据",
+    "href": "03-replication-03-Code.html#读取数据",
+    "title": "6  论文复现：交错双重差分（基于原始 R 代码）",
+    "section": "6.3 读取数据",
+    "text": "6.3 读取数据\n与原始代码一致：\n\n# 设置工作路径\nsetwd(\"F:/2026学术直播/2026年5月学术直播资料讲义/16--R 工作流\")\n\n# 读取 Stata 格式的数据\nsimulation &lt;- read_dta(\"simulation.dta\")\n\n# 查看数据结构\nstr(simulation)\n\n# 查看前几行数据\nhead(simulation)\n\n# 统计摘要\nsummary(simulation)",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>论文复现：交错双重差分（基于原始 R 代码）</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication-03-Code.html#figure-d.2-处理状态面板视图",
+    "href": "03-replication-03-Code.html#figure-d.2-处理状态面板视图",
+    "title": "6  论文复现：交错双重差分（基于原始 R 代码）",
+    "section": "6.4 Figure D.2: 处理状态面板视图",
+    "text": "6.4 Figure D.2: 处理状态面板视图\n使用 panelView 包来可视化处理状态分布：\n\n## figure D.2\npanelview(Y ~ D, data = simulation,\n          index = c(\"i\", \"t\"),\n          xlab = \"时间\", ylab = \"个体\",\n          main = \"Figure D.2: 处理状态分布\",\n          by.timing = FALSE,\n          legend.labs = c(\"未处理\", \"已处理\"),\n          gridOff = TRUE)\n\n如果需要按处理时间分组查看：\n\npanelview(Y ~ D, data = simulation,\n          index = c(\"i\", \"t\"),\n          xlab = \"时间\", ylab = \"处理组\",\n          main = \"Figure D.2 (按处理时间分组)\",\n          by.timing = TRUE,\n          legend.labs = c(\"未处理\", \"已处理\"),\n          gridOff = TRUE)",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>论文复现：交错双重差分（基于原始 R 代码）</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication-03-Code.html#figure-d.4-使用-did-包估计-attgt",
+    "href": "03-replication-03-Code.html#figure-d.4-使用-did-包估计-attgt",
+    "title": "6  论文复现：交错双重差分（基于原始 R 代码）",
+    "section": "6.5 Figure D.4: 使用 did 包估计 ATT(g,t)",
+    "text": "6.5 Figure D.4: 使用 did 包估计 ATT(g,t)\n\n6.5.1 估计群组时期平均处理效应\n与原始代码一致：\n\n## figure D.4\nmw.attgt &lt;- att_gt(\n  yname = \"Y\",\n  gname = \"gvar\",\n  idname = \"i\",\n  tname = \"t\",\n  xformla = ~ 1,\n  data = simulation\n  # 可选参数: est_method = \"dr\"/\"ipw\"/\"reg\"\n)\n\n# summarize the results\nsummary(mw.attgt)\n\n\n\n6.5.2 尝试不同估计方法\n原始代码注释中提到了可选估计方法，让我们一一尝试：\n\n# 双重稳健估计 (dr)\nmw.attgt_dr &lt;- att_gt(\n  yname = \"Y\",\n  gname = \"gvar\",\n  idname = \"i\",\n  tname = \"t\",\n  xformla = ~ 1,\n  data = simulation,\n  est_method = \"dr\"\n)\nsummary(mw.attgt_dr)\n\n\n# 逆概率加权估计 (ipw)\nmw.attgt_ipw &lt;- att_gt(\n  yname = \"Y\",\n  gname = \"gvar\",\n  idname = \"i\",\n  tname = \"t\",\n  xformla = ~ 1,\n  data = simulation,\n  est_method = \"ipw\"\n)\nsummary(mw.attgt_ipw)\n\n\n# 回归估计 (reg)\nmw.attgt_reg &lt;- att_gt(\n  yname = \"Y\",\n  gname = \"gvar\",\n  idname = \"i\",\n  tname = \"t\",\n  xformla = ~ 1,\n  data = simulation,\n  est_method = \"reg\"\n)\nsummary(mw.attgt_reg)\n\n\n\n6.5.3 绘制 ATT(g,t) 结果\n与原始代码一致：\n\n# plot the results\n# set ylim so that all plots have the same scale along y-axis\nggdid(mw.attgt, ylim = c(-3, 5))\n\n使用 ggplot2 美化图表：\n\nlibrary(ggplot2)\n\nggdid(mw.attgt, ylim = c(-3, 5)) +\n  ggtitle(\"Figure D.4: 群组时期平均处理效应 ATT(g,t)\") +\n  xlab(\"群组\") +\n  ylab(\"ATT\") +\n  theme_minimal()",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>论文复现：交错双重差分（基于原始 R 代码）</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication-03-Code.html#事件研究设计",
+    "href": "03-replication-03-Code.html#事件研究设计",
+    "title": "6  论文复现：交错双重差分（基于原始 R 代码）",
+    "section": "6.6 事件研究设计",
+    "text": "6.6 事件研究设计\n基于 ATT(g,t) 进一步估计动态处理效应：\n\nlibrary(ggplot2)\n\n# 事件研究估计\nmw.es &lt;- aggte(mw.attgt, type = \"dynamic\")\n\nsummary(mw.es)\n\n# 事件研究图\nggdid(mw.es) +\n  ggtitle(\"事件研究: 动态处理效应\") +\n  xlab(\"相对时间\") +\n  ylab(\"ATT\") +\n  theme_minimal()",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>论文复现：交错双重差分（基于原始 R 代码）</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication-03-Code.html#总体-att",
+    "href": "03-replication-03-Code.html#总体-att",
+    "title": "6  论文复现：交错双重差分（基于原始 R 代码）",
+    "section": "6.7 总体 ATT",
+    "text": "6.7 总体 ATT\n\n# 总体 ATT\nmw.att &lt;- aggte(mw.attgt, type = \"group\")\nsummary(mw.att)",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>论文复现：交错双重差分（基于原始 R 代码）</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication-03-Code.html#完整复现代码",
+    "href": "03-replication-03-Code.html#完整复现代码",
+    "title": "6  论文复现：交错双重差分（基于原始 R 代码）",
+    "section": "6.8 完整复现代码",
+    "text": "6.8 完整复现代码\n以下是与原始 figure D2&D4.R 完全一致的完整代码：\n\n########################################################################\n## figure D.2 & figure D.4 (完整复现版)\n########################################################################\n\nlibrary(panelView)\nlibrary(haven)\n\n# 设置工作路径\nsetwd(\"F:/2026学术直播/2026年5月学术直播资料讲义/16--R 工作流\")\n\n# 读取数据\nsimulation &lt;- read_dta(\"simulation.dta\")\n\n## figure D.2\npanelview(Y ~ D, data = simulation,\n          index = c(\"i\", \"t\"),\n          xlab = \"时间\", ylab = \"个体\",\n          main = \"Figure D.2: 处理状态分布\",\n          by.timing = FALSE,\n          legend.labs = c(\"未处理\", \"已处理\"),\n          gridOff = TRUE)\n\n## figure D.4\nlibrary(did)\nmw.attgt &lt;- att_gt(\n  yname = \"Y\",\n  gname = \"gvar\",\n  idname = \"i\",\n  tname = \"t\",\n  xformla = ~ 1,\n  data = simulation\n)\n\n# summarize the results\nsummary(mw.attgt)\n\n# plot the results\n# set ylim so that all plots have the same scale along y-axis\nggdid(mw.attgt, ylim = c(-3, 5))",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>论文复现：交错双重差分（基于原始 R 代码）</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication-03-Code.html#数据变量说明",
+    "href": "03-replication-03-Code.html#数据变量说明",
+    "title": "6  论文复现：交错双重差分（基于原始 R 代码）",
+    "section": "6.9 数据变量说明",
+    "text": "6.9 数据变量说明\n根据生成数据的代码，变量说明如下：\n\n\n\n变量\n说明\n\n\n\n\ni\n个体ID (1-500)\n\n\nt\n时间期数 (1-8)\n\n\nEi\n个体首次接受处理的时间 (2-8)，NA表示永不处理\n\n\nK\n相对处理时间：t - Ei\n\n\nD\n处理状态指示变量 (0/1)\n\n\ngvar\ndid 包需要的分组变量 (Ei或0)\n\n\ntau\n真实处理效应\n\n\neps\n随机误差项\n\n\nY\n结果变量",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>论文复现：交错双重差分（基于原始 R 代码）</span>"
+    ]
+  },
+  {
+    "objectID": "03-replication-03-Code.html#实践练习",
+    "href": "03-replication-03-Code.html#实践练习",
+    "title": "6  论文复现：交错双重差分（基于原始 R 代码）",
+    "section": "6.10 实践练习",
+    "text": "6.10 实践练习\n\n在 Stata 中运行 generate_simulation.do 生成 simulation.dta\n在 R 中运行本章代码，复现 Figure D.2 和 Figure D.4\n尝试使用不同的估计方法 (dr, ipw, reg) 并比较结果\n绘制事件研究图并解释结果\n计算总体 ATT 并解释其含义",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>论文复现：交错双重差分（基于原始 R 代码）</span>"
+    ]
+  },
+  {
+    "objectID": "04-claude.html",
+    "href": "04-claude.html",
+    "title": "7  Claude Code 辅助科研",
+    "section": "",
+    "text": "7.1 Claude Code 简介\n本章介绍如何使用 Claude Code 作为 AI 助手提升科研效率。\nClaude Code 是一个强大的 AI 编程助手，特别适合：",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Claude Code 辅助科研</span>"
+    ]
+  },
+  {
+    "objectID": "04-claude.html#claude-code-简介",
+    "href": "04-claude.html#claude-code-简介",
+    "title": "7  Claude Code 辅助科研",
+    "section": "",
+    "text": "代码编写与调试\n数据分析与可视化\n文献阅读与笔记整理\n论文写作辅助",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Claude Code 辅助科研</span>"
+    ]
+  },
+  {
+    "objectID": "04-claude.html#安装与配置",
+    "href": "04-claude.html#安装与配置",
+    "title": "7  Claude Code 辅助科研",
+    "section": "7.2 安装与配置",
+    "text": "7.2 安装与配置\n\n7.2.1 安装 Claude Code\n参考官方文档安装 Claude Code CLI 工具。\n\n\n7.2.2 在 VS Code 中使用\n在 VS Code 终端中运行：\n# 启动 Claude Code\nclaude",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Claude Code 辅助科研</span>"
+    ]
+  },
+  {
+    "objectID": "04-claude.html#常见使用场景",
+    "href": "04-claude.html#常见使用场景",
+    "title": "7  Claude Code 辅助科研",
+    "section": "7.3 常见使用场景",
+    "text": "7.3 常见使用场景\n\n7.3.1 场景 1：代码调试\n当代码出错时，可以向 Claude Code 提问：\n\n问题：我的 R 代码报错了，请帮我看看问题在哪里？\nlibrary(did)\nresult &lt;- att_gt(yname = \"Y\", gname = \"group\",\n                idname = \"id\", tname = \"year\",\n                data = mydata)\n\nClaude Code 会分析代码并提供建议。\n\n\n7.3.2 场景 2：数据可视化\n\n问题：帮我用 ggplot2 画一个漂亮的事件研究图，显示 95% 置信区间。\n\n示例对话：\n\n# Claude 可能生成的示例代码\nlibrary(ggplot2)\n\nevent_study_plot &lt;- function(data, att, se, time) {\n  df &lt;- data.frame(\n    time = time,\n    att = att,\n    se = se\n  )\n\n  ggplot(df, aes(x = time, y = att)) +\n    geom_point() +\n    geom_line() +\n    geom_ribbon(aes(ymin = att - 1.96 * se,\n                    ymax = att + 1.96 * se),\n                alpha = 0.2) +\n    geom_vline(xintercept = 0, linetype = \"dashed\") +\n    labs(x = \"相对时间\", y = \"ATT\", title = \"事件研究图\") +\n    theme_minimal()\n}\n\n\n\n7.3.3 场景 3：表格输出\n\n问题：帮我写一段代码，用 modelsummary 包输出回归表格到 Word。\n\n\n# 示例代码\nlibrary(modelsummary)\nlibrary(fixest)\n\n# 估计模型\nmodel1 &lt;- feols(Y ~ D | i + t, data = simulation)\nmodel2 &lt;- feols(Y ~ D + X1 + X2 | i + t, data = simulation)\n\n# 输出表格\nmodelsummary(list(\"模型1\" = model1, \"模型2\" = model2),\n             output = \"regression_table.docx\",\n             stars = TRUE)\n\n\n\n7.3.4 场景 4：论文写作辅助\nClaude Code 可以帮助：\n\n润色英文摘要\n解释方法论\n生成文献综述框架\n检查语法错误",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Claude Code 辅助科研</span>"
+    ]
+  },
+  {
+    "objectID": "04-claude.html#实际示例使用-claude-辅助计量分析",
+    "href": "04-claude.html#实际示例使用-claude-辅助计量分析",
+    "title": "7  Claude Code 辅助科研",
+    "section": "7.4 实际示例：使用 Claude 辅助计量分析",
+    "text": "7.4 实际示例：使用 Claude 辅助计量分析\n让我们通过一个完整示例展示如何使用 Claude Code：\n\n7.4.1 步骤 1：描述数据\n\n提示词： 我有一个面板数据集，包含企业数据，变量有：企业ID、年份、 产出、投资、就业人数。请帮我写一段代码进行描述性统计。\n\nClaude 可能生成：\n\n# 描述性统计示例\nlibrary(dplyr)\nlibrary(tibble)\n\n# 创建模拟数据\nfirm_data &lt;- tibble(\n  firm_id = rep(1:100, each = 10),\n  year = rep(2010:2019, 100),\n  output = rnorm(1000, 10, 2),\n  invest = rnorm(1000, 2, 0.5),\n  employment = sample(50:500, 1000, replace = TRUE)\n)\n\n# 描述性统计\nfirm_data %&gt;%\n  select(output, invest, employment) %&gt;%\n  summary()\n\n\n\n7.4.2 步骤 2：估计模型\n\n提示词： 请帮我用 fixest 包估计固定效应模型， 被解释变量是产出，解释变量是投资。\n\nClaude 可能生成：\n\nlibrary(fixest)\n\n# 估计模型\nmodel_fe &lt;- feols(output ~ invest | firm_id + year,\n               data = firm_data)\n\n# 查看结果\netable(model_fe)\n\n\n\n7.4.3 步骤 3：生成可视化\n\n提示词： 帮我画一个系数图，显示不同分位数回归的结果。\n\nClaude 可能生成：\n\nlibrary(ggplot2)\n\n# 假设我们有不同分位数的结果\nquantile_results &lt;- tibble(\n  quantile = c(0.1, 0.25, 0.5, 0.75, 0.9),\n  coef = c(0.8, 1.0, 1.2, 1.1, 0.9),\n  se = c(0.2, 0.15, 0.1, 0.12, 0.18)\n)\n\n# 系数图\nggplot(quantile_results, aes(x = factor(quantile), y = coef)) +\n  geom_point(size = 3) +\n  geom_errorbar(aes(ymin = coef - 1.96 * se,\n                    ymax = coef + 1.96 * se),\n                width = 0.2) +\n  geom_hline(yintercept = 0, linetype = \"dashed\") +\n  labs(title = \"分位数回归结果\",\n       x = \"分位数\", y = \"系数\") +\n  theme_minimal()",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Claude Code 辅助科研</span>"
+    ]
+  },
+  {
+    "objectID": "04-claude.html#提示词技巧",
+    "href": "04-claude.html#提示词技巧",
+    "title": "7  Claude Code 辅助科研",
+    "section": "7.5 提示词技巧",
+    "text": "7.5 提示词技巧\n\n7.5.1 好的提示词要素\n\n明确任务：清楚说明要做什么\n提供背景：给出数据结构和目标\n示例：给出期望输出的示例\n约束条件：说明限制和要求\n\n\n\n7.5.2 示例提示词模板\n代码生成： &gt; 我需要写一段 R 代码来 [任务描述]。 &gt; 我的数据结构是 [描述数据]。 &gt; 我想要的输出是 [描述期望输出]。\n错误调试： &gt; 我的代码报错了，错误信息是： &gt; [粘贴错误信息] &gt; 代码是： &gt; [粘贴代码] &gt; 请帮我找出问题并修复。\n解释代码： &gt; 请帮我解释这段代码的工作原理， &gt; 并指出可能的改进空间。 &gt; [粘贴代码]",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Claude Code 辅助科研</span>"
+    ]
+  },
+  {
+    "objectID": "04-claude.html#注意事项",
+    "href": "04-claude.html#注意事项",
+    "title": "7  Claude Code 辅助科研",
+    "section": "7.6 注意事项",
+    "text": "7.6 注意事项\n\n7.6.1 验证结果\nClaude Code 生成的代码需要：\n\n检查逻辑：确保代码逻辑正确\n测试运行：在实际数据上测试\n理解代码：确保你理解代码的每一部分\n引用来源：重要方法需要查阅原始文献\n\n\n\n7.6.2 保护数据安全\n\n不要分享敏感数据\n使用模拟数据来提问\n保密研究想法在发表前",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Claude Code 辅助科研</span>"
+    ]
+  },
+  {
+    "objectID": "04-claude.html#实践练习",
+    "href": "04-claude.html#实践练习",
+    "title": "7  Claude Code 辅助科研",
+    "section": "7.7 实践练习",
+    "text": "7.7 实践练习\n\n安装并尝试使用 Claude Code\n用一个简单的 R 任务测试 Claude\n学习编写有效的提示词\n尝试用 Claude 帮助完成一个小的分析任务\n\n下一章我们将总结全书内容并提供实践项目。",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Claude Code 辅助科研</span>"
+    ]
+  },
+  {
+    "objectID": "05-summary.html",
+    "href": "05-summary.html",
+    "title": "8  总结与实践",
+    "section": "",
+    "text": "8.1 内容回顾\n本章总结全书内容，并提供一个综合实践项目。",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>总结与实践</span>"
+    ]
+  },
+  {
+    "objectID": "05-summary.html#内容回顾",
+    "href": "05-summary.html#内容回顾",
+    "title": "8  总结与实践",
+    "section": "",
+    "text": "8.1.1 第1章：环境配置\n我们学习了： - 安装 R 和 RStudio - 配置 VS Code 作为 R 开发环境 - 包管理基础\n\n# 核心包安装清单\ncore_packages &lt;- c(\n  \"tidyverse\",    # 数据科学核心\n  \"haven\",        # Stata 文件读取\n  \"readxl\",       # Excel 文件读取\n  \"fixest\",       # 固定效应模型\n  \"did\",          # 双重差分\n  \"panelView\",    # 面板可视化\n  \"modelsummary\", # 表格输出\n  \"gt\"            # 精美表格\n)\n\n# 安装（如果未安装）\n# install.packages(core_packages)\n\n\n\n8.1.2 第2章：数据操作\n主要技能： - 多格式数据导入（.dta, .xlsx, .csv） - 数据探索（head, summary, str） - 基础可视化（plot, hist, ggplot2）\n\n\n8.1.3 第3章：论文复现\n核心方法： - 交错双重差分模型 - 使用 did 包估计 ATT(g,t) - 事件研究设计 - 结果可视化\n\n\n8.1.4 第4章：AI 辅助\n利用 Claude Code： - 代码生成与调试 - 可视化辅助 - 论文写作支持",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>总结与实践</span>"
+    ]
+  },
+  {
+    "objectID": "05-summary.html#综合实践项目",
+    "href": "05-summary.html#综合实践项目",
+    "title": "8  总结与实践",
+    "section": "8.2 综合实践项目",
+    "text": "8.2 综合实践项目\n\n8.2.1 项目背景\n假设你正在研究一项政策的效果，该政策在不同地区在不同时间点实施。你需要：\n\n读取数据\n进行描述性统计\n估计政策效果\n生成图表和表格\n撰写分析报告\n\n\n\n8.2.2 数据准备\n让我们创建一个完整的模拟数据集供实践使用：\n\nset.seed(456)\nlibrary(tibble)\nlibrary(dplyr)\n\n# 创建模拟面板数据\nn_regions &lt;- 50\nn_years &lt;- 12\n\npolicy_data &lt;- tibble(\n  region_id = rep(1:n_regions, each = n_years),\n  year = rep(2010:2021, n_regions),\n  # 随机分配政策实施年份\n  treat_year = sample(c(0, 2015, 2016, 2017, 2018),\n                      n_regions,\n                      replace = TRUE,\n                      prob = c(0.25, 0.2, 0.2, 0.2, 0.15)) %&gt;%\n    rep(each = n_years),\n  # 协变量\n  pop = rnorm(n_regions * n_years, 100, 20) %&gt;% abs(),\n  gdp = rnorm(n_regions * n_years, 500, 100) %&gt;% abs()\n) %&gt;%\n  mutate(\n    # 处理状态\n    treat = as.integer(treat_year &gt; 0 & year &gt;= treat_year),\n    # 相对时间\n    rel_year = ifelse(treat_year == 0, Inf, year - treat_year),\n    # 结果变量（包含政策效应）\n    outcome = 10 +\n      0.1 * gdp +\n      0.05 * pop +\n      (treat_year &gt; 0) * 2 +\n      treat * (3 + 0.5 * pmax(rel_year, 0)) +\n      rnorm(n())\n  )\n\nhead(policy_data)\n\n\n\n8.2.3 任务 1：数据探索\n\n# 查看数据结构\nstr(policy_data)\n\n# 摘要统计\npolicy_data %&gt;%\n  select(outcome, gdp, pop, treat) %&gt;%\n  summary()\n\n\n\n8.2.4 任务 2：可视化处理状态\n\nlibrary(panelView)\n\n# 面板视图\npanelview(outcome ~ treat,\n          data = policy_data,\n          index = c(\"region_id\", \"year\"),\n          xlab = \"年份\", ylab = \"地区\",\n          main = \"政策实施状态\",\n          by.timing = TRUE)\n\n\n\n8.2.5 任务 3：估计政策效果\n\nlibrary(did)\n\n# 估计 ATT(g,t)\nattgt_result &lt;- att_gt(\n  yname = \"outcome\",\n  gname = \"treat_year\",\n  idname = \"region_id\",\n  tname = \"year\",\n  xformla = ~ gdp + pop,\n  data = policy_data,\n  est_method = \"dr\"\n)\n\n# 查看结果\nsummary(attgt_result)\n\n\n\n8.2.6 任务 4：事件研究分析\n\n# 动态效应\nes_result &lt;- aggte(attgt_result, type = \"dynamic\")\n\n# 绘制事件研究图\nggdid(es_result) +\n  labs(title = \"事件研究：政策动态效应\",\n       x = \"相对时间\", y = \"ATT\") +\n  theme_minimal()\n\n\n\n8.2.7 任务 5：生成回归表格\n\nlibrary(modelsummary)\nlibrary(fixest)\n\n# 基础 TWFE 估计\ntwfe_model &lt;- feols(outcome ~ treat | region_id + year,\n                    data = policy_data)\n\n# 加入协变量\ntwfe_model_cov &lt;- feols(outcome ~ treat + gdp + pop | region_id + year,\n                        data = policy_data)\n\n# 输出表格\nmodelsummary(\n  list(\"TWFE (无协变量)\" = twfe_model,\n       \"TWFE (有协变量)\" = twfe_model_cov),\n  output = \"table_regression.docx\",\n  stars = TRUE,\n  gof_map = c(\"nobs\", \"r.squared\", \"F\")\n)",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>总结与实践</span>"
+    ]
+  },
+  {
+    "objectID": "05-summary.html#进阶学习资源",
+    "href": "05-summary.html#进阶学习资源",
+    "title": "8  总结与实践",
+    "section": "8.3 进阶学习资源",
+    "text": "8.3 进阶学习资源\n\n8.3.1 R 学习资源\n\n\n\n资源\n描述\n\n\n\n\nR for Data Science\n经典 R 数据科学教材\n\n\nAdvanced R\n高级 R 编程\n\n\nEconometrics in R\n计量经济学 R 实现\n\n\n\n\n\n8.3.2 计量经济学资源\n\nCausal Inference: The Mixtape - Scott Cunningham\nMostly Harmless Econometrics - Angrist & Pischke\nDID 专题资源\n\n\n\n8.3.3 最新方法追踪\n\nArXiv 追踪最新论文\nNBER Working Papers\n关注领域内顶级期刊",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>总结与实践</span>"
+    ]
+  },
+  {
+    "objectID": "05-summary.html#研究工作流建议",
+    "href": "05-summary.html#研究工作流建议",
+    "title": "8  总结与实践",
+    "section": "8.4 研究工作流建议",
+    "text": "8.4 研究工作流建议\n\n8.4.1 项目组织\nmy-research/\n├── data/\n│   ├── raw/           # 原始数据\n│   └── processed/     # 处理后数据\n├── code/\n│   ├── 01-clean-data.R\n│   ├── 02-analysis.R\n│   └── 03-figures.R\n├── output/\n│   ├── figures/\n│   └── tables/\n└── paper/\n    ├── draft.qmd\n    └── references.bib\n\n\n8.4.2 代码管理\n\n使用 Git 进行版本控制\n写清晰的注释\n封装常用功能为函数\n避免硬编码路径\n\n\n\n8.4.3 可复现研究\n\n使用 Quarto/R Markdown\n设置随机种子\n记录包版本（使用 renv）\n提供完整的分析代码",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>总结与实践</span>"
+    ]
+  },
+  {
+    "objectID": "05-summary.html#结语",
+    "href": "05-summary.html#结语",
+    "title": "8  总结与实践",
+    "section": "8.5 结语",
+    "text": "8.5 结语\n希望本书能够帮助你建立现代化的 R + AI 科研工作流。记住：\n\n实践是最好的老师：多动手写代码\n善用工具：AI 可以大幅提高效率\n保持学习：方法在不断更新\n开放分享：让你的研究可复现\n\n祝科研顺利！",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>总结与实践</span>"
+    ]
+  },
+  {
+    "objectID": "06-RCode.html",
+    "href": "06-RCode.html",
+    "title": "9  Quarto 中 R 代码控制",
+    "section": "",
+    "text": "9.1 1. 不编译执行（只显示代码）\n本章介绍如何在 Quarto 文件中控制 R 代码的执行和显示。\n使用 eval: false 选项，代码会显示但不会执行：\n实际效果：\n# 这段代码会显示在文档中，但不会被执行\nprint(\"这段代码不会运行\")\nx &lt;- 1:10\nmean(x)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Quarto 中 R 代码控制</span>"
+    ]
+  },
+  {
+    "objectID": "06-RCode.html#不编译执行只显示代码",
+    "href": "06-RCode.html#不编译执行只显示代码",
+    "title": "9  Quarto 中 R 代码控制",
+    "section": "",
+    "text": "::: {.cell}\n\n```{.r .cell-code}\n# 这段代码会显示在文档中，但不会被执行\nprint(\"这段代码不会运行\")\nx &lt;- 1:10\nmean(x)\n```\n:::",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Quarto 中 R 代码控制</span>"
+    ]
+  },
+  {
+    "objectID": "06-RCode.html#编译执行默认方式",
+    "href": "06-RCode.html#编译执行默认方式",
+    "title": "9  Quarto 中 R 代码控制",
+    "section": "9.2 2. 编译执行（默认方式）",
+    "text": "9.2 2. 编译执行（默认方式）\n使用 eval: true 或者不写 eval 选项（如果没有全局禁用）：\n\n::: {.cell}\n\n```{.r .cell-code}\n# 这段代码会被执行，结果也会显示在文档中\nprint(\"这段代码会运行\")\nx &lt;- 1:10\nmean(x)\n```\n:::\n显式指定执行：\n\n::: {.cell}\n\n```{.r .cell-code}\nsummary(cars)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00  \n```\n\n\n:::\n:::",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Quarto 中 R 代码控制</span>"
+    ]
+  },
+  {
+    "objectID": "06-RCode.html#执行但隐藏代码",
+    "href": "06-RCode.html#执行但隐藏代码",
+    "title": "9  Quarto 中 R 代码控制",
+    "section": "9.3 3. 执行但隐藏代码",
+    "text": "9.3 3. 执行但隐藏代码\n使用 echo: false，代码会执行但不显示：\n\n::: {.cell}\n\n:::",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Quarto 中 R 代码控制</span>"
+    ]
+  },
+  {
+    "objectID": "06-RCode.html#隐藏输出但显示代码",
+    "href": "06-RCode.html#隐藏输出但显示代码",
+    "title": "9  Quarto 中 R 代码控制",
+    "section": "9.4 4. 隐藏输出但显示代码",
+    "text": "9.4 4. 隐藏输出但显示代码\n使用 results: hide，代码显示且执行，但不显示输出：\n\n::: {.cell}\n\n```{.r .cell-code}\n# 代码会显示，也会执行，但输出结果不会显示\nx &lt;- rnorm(100)\nsummary(x)\n```\n:::",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Quarto 中 R 代码控制</span>"
+    ]
+  },
+  {
+    "objectID": "06-RCode.html#全局设置在-_quarto.yml-中",
+    "href": "06-RCode.html#全局设置在-_quarto.yml-中",
+    "title": "9  Quarto 中 R 代码控制",
+    "section": "9.5 5. 全局设置（在 _quarto.yml 中）",
+    "text": "9.5 5. 全局设置（在 _quarto.yml 中）\n在 _quarto.yml 中设置全局选项：\nexecute:\n  freeze: auto\n  eval: false        # 全局默认不执行代码\n  warning: false\n  message: false\n如果全局设置了 eval: false，但你想让某个特定代码块执行，可以覆盖它：\n\n::: {.cell}\n\n```{.r .cell-code}\n# 即使全局禁用了执行，这个代码块也会执行\n# 注意：使用前确保需要的包已安装\nprint(\"这个代码块会执行\")\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"这个代码块会执行\"\n```\n\n\n:::\n:::",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Quarto 中 R 代码控制</span>"
+    ]
+  },
+  {
+    "objectID": "06-RCode.html#常用组合示例",
+    "href": "06-RCode.html#常用组合示例",
+    "title": "9  Quarto 中 R 代码控制",
+    "section": "9.6 6. 常用组合示例",
+    "text": "9.6 6. 常用组合示例\n\n\n\n选项\n代码显示\n代码执行\n结果显示\n\n\n\n\n{r}\n✓\n✓\n✓\n\n\n{r, eval=FALSE}\n✓\n✗\n✗\n\n\n{r, echo=FALSE}\n✗\n✓\n✓\n\n\n{r, results='hide'}\n✓\n✓\n✗\n\n\n{r, include=FALSE}\n✗\n✓\n✗",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Quarto 中 R 代码控制</span>"
+    ]
+  },
+  {
+    "objectID": "06-RCode.html#其他有用选项",
+    "href": "06-RCode.html#其他有用选项",
+    "title": "9  Quarto 中 R 代码控制",
+    "section": "9.7 7. 其他有用选项",
+    "text": "9.7 7. 其他有用选项\n\n9.7.1 折叠代码\n使用 #| code-fold: true 让读者可以展开/折叠代码（注意是代码块内部的 YAML 选项）：\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\"}\n# 这段代码默认会被折叠起来\nsummary(cars)\n```\n:::\n或者在代码块头部用 #| 标注：\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\"}\nsummary(cars)\n```\n:::\n\n\n9.7.2 显示警告和消息\n默认情况下可能会隐藏警告，可以设置显示：\n\n::: {.cell}\n\n```{.r .cell-code}\n# 警告和消息都会显示\nwarning(\"这是一个警告\")\nmessage(\"这是一条消息\")\n```\n:::\n\n\n9.7.3 设置图片尺寸\n\n::: {.cell}\n\n```{.r .cell-code}\nplot(cars)\n```\n:::\n\n\n9.7.4 设置图片标题\n\n::: {.cell}\n\n```{.r .cell-code}\nplot(cars)\n```\n:::",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Quarto 中 R 代码控制</span>"
+    ]
+  },
+  {
+    "objectID": "06-RCode.html#实际应用建议",
+    "href": "06-RCode.html#实际应用建议",
+    "title": "9  Quarto 中 R 代码控制",
+    "section": "9.8 8. 实际应用建议",
+    "text": "9.8 8. 实际应用建议\n在编写教程或书籍时：\n\n教学展示：用 eval: FALSE 展示代码，让读者自己运行\n结果演示：用 eval: TRUE 执行代码并展示结果\n生成图表：用 echo: FALSE 隐藏代码，只展示图表\n加载数据：用 include: FALSE 在后台执行而不显示\n\n在本书中，由于设置了全局 eval: false，所以所有代码块默认只显示不执行。如果需要某个代码块实际运行，就加上 eval: TRUE。",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Quarto 中 R 代码控制</span>"
+    ]
+  },
+  {
+    "objectID": "07-R-intro.html",
+    "href": "07-R-intro.html",
+    "title": "10  R 代码入门：创建、执行与编译",
+    "section": "",
+    "text": "10.1 1. 准备工作\n本章介绍如何在 VSCode + Quarto 环境中创建 R 代码、交互式执行以及编译文档。",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>R 代码入门：创建、执行与编译</span>"
+    ]
+  },
+  {
+    "objectID": "07-R-intro.html#准备工作",
+    "href": "07-R-intro.html#准备工作",
+    "title": "10  R 代码入门：创建、执行与编译",
+    "section": "",
+    "text": "10.1.1 1.1 确认安装\n在开始之前，请确认已安装：\n\nR 语言（从 CRAN 下载）\nVSCode\nVSCode 扩展：\n\nR Extension Pack（必需）\nQuarto（必需）\n\n\n\n\n10.1.2 1.2 验证 R 终端\n在 VSCode 中按 Ctrl+` 打开终端，输入：\nR --version\n如果显示 R 版本信息，说明配置成功。",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>R 代码入门：创建、执行与编译</span>"
+    ]
+  },
+  {
+    "objectID": "07-R-intro.html#创建-r-脚本文件",
+    "href": "07-R-intro.html#创建-r-脚本文件",
+    "title": "10  R 代码入门：创建、执行与编译",
+    "section": "10.2 2. 创建 R 脚本文件",
+    "text": "10.2 2. 创建 R 脚本文件\n\n10.2.1 2.1 创建 .R 文件\n\n在 VSCode 中点击 File → New File\n保存为 test.R（注意后缀是 .R）\n输入以下代码：\n\n\n# test.R - 我的第一个 R 脚本\nprint(\"Hello, R!\")\n\n# 创建一个向量\nx &lt;- 1:10\nx\n\n# 计算均值\nmean(x)\n\n# 绘制简单图形\nplot(x, x^2, main = \"简单示例\", xlab = \"x\", ylab = \"x²\")\n\n\n\n10.2.2 2.2 创建 .qmd 文件\nQuarto 文件（.qmd）可以混合文本和代码：\n\n新建文件，保存为 demo.qmd\n输入以下内容：\n\n---\ntitle: \"R 代码演示\"\nauthor: \"你的名字\"\ndate: \"2026-06-24\"\nformat: html\n---\n\n# 第一部分\n\n这是一个 Quarto 文档，可以混合文本和 R 代码。\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# 这里是 R 代码\nprint(\"Hello from Quarto!\")\nx &lt;- 1:5\nmean(x)\n```\n:::",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>R 代码入门：创建、执行与编译</span>"
+    ]
+  },
+  {
+    "objectID": "07-R-intro.html#交互式执行代码",
+    "href": "07-R-intro.html#交互式执行代码",
+    "title": "10  R 代码入门：创建、执行与编译",
+    "section": "10.3 3. 交互式执行代码",
+    "text": "10.3 3. 交互式执行代码\n\n10.3.1 3.1 在 .R 文件中执行\n\n\n\n操作\n快捷键\n说明\n\n\n\n\n运行选中行\nCtrl+Enter\n运行选中的代码，或光标所在行\n\n\n运行整个文件\nCtrl+Shift+Enter\n运行整个脚本\n\n\n运行到光标处\nCtrl+Alt+B\n从开头运行到光标位置\n\n\n\n实践练习：\n打开 test.R，逐行选中代码并按 Ctrl+Enter，观察终端输出。\n\n\n10.3.2 3.2 在 .qmd 文件中执行\n在 Quarto 文件中，每个代码块上方都有按钮：\n\n\n\n按钮\n功能\n\n\n\n\nRun Cell\n运行当前代码块\n\n\nRun Above\n运行当前代码块以上的所有代码\n\n\nRun Below\n运行当前代码块以下的所有代码\n\n\n\n也可以使用 Ctrl+Enter 运行当前行或选中代码。\n\n\n10.3.3 3.3 终端输出说明\n执行代码后，VSCode 底部的终端会显示：\n&gt; print(\"Hello, R!\")\n[1] \"Hello, R!\"\n&gt; x &lt;- 1:10\n&gt; x\n [1]  1  2  3  4  5  6  7  8  9 10\n&gt; mean(x)\n[1] 5.5\n图形输出会显示在 Plot 面板中。",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>R 代码入门：创建、执行与编译</span>"
+    ]
+  },
+  {
+    "objectID": "07-R-intro.html#编译-quarto-文档",
+    "href": "07-R-intro.html#编译-quarto-文档",
+    "title": "10  R 代码入门：创建、执行与编译",
+    "section": "10.4 4. 编译 Quarto 文档",
+    "text": "10.4 4. 编译 Quarto 文档\n\n10.4.1 4.1 编译方法\n有三种方式编译 .qmd 文件：\n\n\n\n方式\n操作\n\n\n\n\n按钮\n点击编辑器右上角的 Render 按钮\n\n\n命令面板\nCtrl+Shift+P → 输入 “Quarto: Render”\n\n\n终端\n输入 quarto render demo.qmd\n\n\n\n\n\n10.4.2 4.2 输出格式\n在文档开头的 YAML 头部指定输出格式：\n---\ntitle: \"我的报告\"\nformat:\n  html: default    # HTML 网页\n  pdf: default     # PDF 文档\n  docx: default    # Word 文档\n---\n\n\n10.4.3 4.3 编译示例\n让我们创建一个完整的示例文档 example.qmd：\n---\ntitle: \"R 语言入门示例\"\nauthor: \"学习者\"\ndate: \"2026-06-24\"\nformat: html\n---\n\n# R 基础操作\n\n## 向量计算\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# 创建向量\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(10, 20, 30, 40, 50)\n\n# 计算\nz &lt;- x + y\nz\nmean(z)\n```\n:::\n\n\n## 数据可视化\n\n\n::: {.cell}\n\n```{.r .cell-code}\nplot(x, y, main = \"x vs y\", pch = 16, col = \"blue\")\nabline(lm(y ~ x), col = \"red\")\n```\n:::\n\n\n## 使用内置数据集\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# 查看 cars 数据集\nhead(cars)\nsummary(cars)\n```\n:::\n点击 Render 按钮，会生成 HTML 文件并在浏览器中打开。",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>R 代码入门：创建、执行与编译</span>"
+    ]
+  },
+  {
+    "objectID": "07-R-intro.html#代码块选项详解",
+    "href": "07-R-intro.html#代码块选项详解",
+    "title": "10  R 代码入门：创建、执行与编译",
+    "section": "10.5 5. 代码块选项详解",
+    "text": "10.5 5. 代码块选项详解\n\n10.5.1 5.1 常用选项组合\n\n\n\n选项\n代码显示\n执行\n结果显示\n适用场景\n\n\n\n\n{r}\n✓\n✓\n✓\n默认，展示代码和结果\n\n\n{r, eval=FALSE}\n✓\n✗\n✗\n展示代码，让读者自己运行\n\n\n{r, echo=FALSE}\n✗\n✓\n✓\n只展示结果（如图片）\n\n\n{r, include=FALSE}\n✗\n✓\n✗\n后台加载数据\n\n\n{r, results='hide'}\n✓\n✓\n✗\n显示代码，隐藏输出\n\n\n\n\n\n10.5.2 5.2 实际示例\n# 代码块选项示例\n\n## 示例1：只显示代码，不执行\n\n::: {.cell}\n\n```{.r .cell-code}\n# 这段代码不会执行，但会显示\nprint(\"这段代码不会运行\")\n```\n:::\n\n\n## 示例2：只显示结果，隐藏代码\n\n::: {.cell}\n\n:::\n\n\n## 示例3：后台执行（加载数据）\n\n\n## 示例4：折叠代码（读者可展开）\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\"}\n# 点击\"Code\"可展开这段代码\nsummary(mtcars)\n```\n:::",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>R 代码入门：创建、执行与编译</span>"
+    ]
+  },
+  {
+    "objectID": "07-R-intro.html#工作流程建议",
+    "href": "07-R-intro.html#工作流程建议",
+    "title": "10  R 代码入门：创建、执行与编译",
+    "section": "10.6 6. 工作流程建议",
+    "text": "10.6 6. 工作流程建议\n\n10.6.1 6.1 开发阶段\n\n交互式探索：在 .R 文件中写代码，用 Ctrl+Enter 逐步运行调试\n整理结果：将调试好的代码复制到 .qmd 文件\n设置选项：根据需要设置 eval、echo 等选项\n\n\n\n10.6.2 6.2 编写报告\n\n先写框架：用标题组织内容结构\n插入代码：在适当位置插入代码块\n逐步编译：边写边编译，及时发现问题\n优化显示：调整 fig.width、fig.cap 等美化输出\n\n\n\n10.6.3 6.3 常见问题\n\n\n\n问题\n可能原因\n解决方法\n\n\n\n\nCtrl+Enter 没反应\nR 扩展未安装\n检查 R Extension Pack\n\n\n找不到 R\nR 路径未配置\n在设置中配置 r.rterm.windows\n\n\n编译失败\n代码有错误\n先在 R 终端测试代码\n\n\n图片不显示\n路径问题\n用相对路径或绝对路径",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>R 代码入门：创建、执行与编译</span>"
+    ]
+  },
+  {
+    "objectID": "07-R-intro.html#实践练习",
+    "href": "07-R-intro.html#实践练习",
+    "title": "10  R 代码入门：创建、执行与编译",
+    "section": "10.7 7. 实践练习",
+    "text": "10.7 7. 实践练习\n\n10.7.1 练习1：创建并运行 R 脚本\n\n创建 practice.R\n输入以下代码：\n# 练习1\na &lt;- 5\nb &lt;- 10\nc &lt;- a + b\nprint(c)\n选中代码，按 Ctrl+Enter 运行\n\n\n\n10.7.2 练习2：创建 Quarto 文档\n\n创建 my-first.qmd\n包含：标题、文本说明、至少 3 个代码块\n点击 Render 编译成 HTML\n\n\n\n10.7.3 练习3：使用代码块选项\n\n创建一个包含以下代码块的文档：\n\n一个只显示不执行的代码块\n一个执行但隐藏代码的代码块（生成图片）\n一个可折叠的代码块\n\n编译并查看效果",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>R 代码入门：创建、执行与编译</span>"
+    ]
+  },
+  {
+    "objectID": "07-R-intro.html#下一步",
+    "href": "07-R-intro.html#下一步",
+    "title": "10  R 代码入门：创建、执行与编译",
+    "section": "10.8 8. 下一步",
+    "text": "10.8 8. 下一步\n掌握了基础操作后，你可以：\n\n学习第 2 章：数据读写与基本操作\n探索 R 包生态系统\n尝试用 Quarto 写你的第一篇报告\n\n祝你学习愉快！",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>R 代码入门：创建、执行与编译</span>"
+    ]
+  }
+]

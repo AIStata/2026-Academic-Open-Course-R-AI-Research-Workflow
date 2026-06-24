@@ -1,0 +1,32 @@
+/* 自定义样式 */
+
+/* 代码块样式优化 */
+.cell-output-display {
+  overflow-x: auto;
+}
+
+/* 提示框样式 */
+.tip {
+  padding: 1em;
+  background-color: #e7f5ff;
+  border-left: 4px solid #4dabf7;
+  margin: 1em 0;
+}
+
+.warning {
+  padding: 1em;
+  background-color: #fff3bf;
+  border-left: 4px solid #fab005;
+  margin: 1em 0;
+}
+
+/* 表格样式 */
+table {
+  width: 100%;
+  margin: 1em 0;
+}
+
+/* 图片居中 */
+.quarto-figure {
+  text-align: center;
+}
